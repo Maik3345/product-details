@@ -14,6 +14,8 @@ import ProductImages from './ProductImages'
 
 import productQuery from './graphql/productQuery.gql'
 
+import { VERTICAL, HORIZONTAL } from './constants/orientation'
+
 import './global.css'
 
 class ProductDetails extends Component {
@@ -33,15 +35,13 @@ class ProductDetails extends Component {
     const { commertialOffer } = selectedItem.sellers[0]
 
     return (
-      <div className="vtex-product-details flex flex-wrap ph6">
+      <div className="vtex-product-details flex-ns flex-wrap-ns ph6">
         <div className="vtex-product-details__images-container w-50-ns w-100-s pr5-ns">
           <div className="fr-ns w-100 h-100">
-            <div className="db">
-              <ProductImages
-                images={selectedItem.images}
-                thumbnailSliderOrientation="HORIZONTAL"
-              />
-            </div>
+            <ProductImages
+              images={selectedItem.images}
+              thumbnailSliderOrientation={HORIZONTAL}
+            />
           </div>
         </div>
         <div className="vtex-product-details__details-container w-50-ns w-100-s pl5-ns">

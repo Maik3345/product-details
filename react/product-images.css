@@ -14,10 +14,6 @@
   max-width: 325px;
 }
 
-.vtex-product-image__horizontal {
-  max-width: 325px;
-}
-
 @media only screen and (min-width: 40em) {
   .vtex-product-image__vertical {
     max-width: 100%;

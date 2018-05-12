@@ -44,11 +44,11 @@ class ProductImages extends Component {
       maxVisibleItems: thumbnailMaxVisibleItems,
     }
 
-    let className = `${VTEXClasses.MAIN_CLASS} flex inline-flex-ns`
+    let className = `${VTEXClasses.MAIN_CLASS} flex-ns inline-flex-ns`
     if (thumbnailSliderOrientation === VERTICAL) {
       className += ` ${VTEXClasses.VERTICAL_COMPONENT} `
     } else {
-      className += ` ${VTEXClasses.HORIZONTAL_COMPONENT} flex-column-reverse`
+      className += ` ${VTEXClasses.HORIZONTAL_COMPONENT} flex-column-reverse-ns`
     }
 
     return (
