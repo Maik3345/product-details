@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
-import { graphql } from 'react-apollo'
+import { compose, graphql, withApollo } from 'react-apollo'
 
 import BuyButton from 'vtex.storecomponents/BuyButton'
 import ProductDescription from 'vtex.storecomponents/ProductDescription'
@@ -13,12 +13,22 @@ import ShippingSimulator from 'vtex.storecomponents/ShippingSimulator'
 import Spinner from '@vtex/styleguide/lib/Spinner'
 
 import productQuery from './graphql/productQuery.gql'
+import cachedFragment from './graphql/fragmentProduct.gql'
 
 import './global.css'
 
 class ProductDetails extends Component {
   render() {
-    const { product } = this.props.data
+    // TODO: change cacheId to retrieve this from a separate procedure
+    const cachedId = `vtex_storegraphql_2_4_1_Product:${this.props.variables.id}`
+    const cachedProductQuery = this.props.client.readFragment({
+      id: cachedId,
+      fragment: cachedFragment
+    })
+    const { product } = (this.props.data.loading ?
+                         {product: cachedProductQuery} :
+                         this.props.data)
+    console.log("Product: ", product)
     if (!product) {
       return (
         <div className="pt6 tc">

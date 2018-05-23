@@ -1,0 +1,28 @@
+fragment cachedData on Product {
+  id
+  productId
+  productName
+  brand
+  description
+  items {
+    itemId
+    name
+    images {
+      imageId
+      imageLabel
+      imageTag
+      imageUrl
+      imageText
+    }
+    sellers {
+      sellerId
+      sellerName
+      addToCartLink
+      sellerDefault
+      commertialOffer {
+        Price
+        ListPrice
+      }
+    }
+  }
+}
