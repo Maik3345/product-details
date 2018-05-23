@@ -93,11 +93,16 @@ class ProductDetails extends Component {
   }
 
   static propTypes = {
-    /** Product slug */
-    slug: PropTypes.string.isRequired,
+    /** variables for GraphQL query */
+    variables: PropTypes.shape({
+      /** id for GraphQL query **/
+      id: PropTypes.string.isRequired
+    }).isRequired,
     /** Product that owns the informations */
     data: PropTypes.shape({
       product: PropTypes.shape({
+        /** Global id */
+        id: PropTypes.string.isRequired,
         /** Product's id */
         productId: PropTypes.string.isRequired,
         /** Product's name */
@@ -150,11 +155,10 @@ class ProductDetails extends Component {
 }
 
 const options = {
-  options: ({ slug }) => ({
-    variables: {
-      slug,
-    },
-  }),
+  options: ({ variables }) => ({ variables })
 }
 
-export default graphql(productQuery, options)(injectIntl(ProductDetails))
+export default compose(
+  withApollo,
+  graphql(productQuery, options)
+)(injectIntl(ProductDetails))

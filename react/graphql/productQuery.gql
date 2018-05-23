@@ -1,5 +1,6 @@
-query Product($slug: String) {
-  product(slug: $slug) {
+query Product($id: ID) {
+  product(id: $id) {
+    id
     productId
     productName
     brand
