@@ -8,74 +8,74 @@
 */
 
 /* Small */
-@media screen and (min-width: 20em) {
-  .vtex-product-details__name-container .vtex-product-name__brand {
+/* @media screen and (min-width: 20em) { */
+  .media-small .vtex-product-details__name-container .vtex-product-name__brand {
     font-size: 1.5rem;
   }
 
-  .vtex-product-details__name-container .vtex-product-name__sku {
+  .media-small .vtex-product-details__name-container .vtex-product-name__sku {
     font-size: 1rem;
   }
 
-  .vtex-product-details .vtex-price-list__container {
+  .media-small .vtex-product-details .vtex-price-list__container {
     font-size: 0.75rem;
   }
 
-  .vtex-product-details .vtex-price-selling__label {
+  .media-small .vtex-product-details .vtex-price-selling__label {
     font-size: 1rem;
   }
 
-  .vtex-product-details .vtex-price-selling {
+  .media-small .vtex-product-details .vtex-price-selling {
     font-size: 2.25rem;
   }
 
-  .vtex-product-details .vtex-price-installments__container {
+  .media-small .vtex-product-details .vtex-price-installments__container {
     font-size: 0.75rem;
   }
 
-  .vtex-product-details .vtex-price-installments__value {
+  .media-small .vtex-product-details .vtex-price-installments__value {
     font-size: 1rem;
   }
 
-  .vtex-product-details .vtex-price-savings {
+  .media-small .vtex-product-details .vtex-price-savings {
     font-size: 0.75rem;
   }
-}
+/* } */
 
 /* Not Small */
-@media screen and (min-width: 40em) {
-  .vtex-product-details__name-container .vtex-product-name__brand {
+/* @media screen and (min-width: 40em) { */
+  .media-not-small .vtex-product-details__name-container .vtex-product-name__brand {
     font-size: 2.25rem;
   }
 
-  .vtex-product-details__name-container .vtex-product-name__sku {
+  .media-not-small .vtex-product-details__name-container .vtex-product-name__sku {
     font-size: 1.25rem;
   }
 
-  .vtex-product-details .vtex-price-list__container {
+  .media-not-small .vtex-product-details .vtex-price-list__container {
     font-size: 0.875rem;
   }
 
-  .vtex-product-details .vtex-price-selling__label {
+  .media-not-small .vtex-product-details .vtex-price-selling__label {
     font-size: 1.25rem;
   }
 
-  .vtex-product-details .vtex-price-selling {
+  .media-not-small .vtex-product-details .vtex-price-selling {
     font-size: 3rem;
   }
 
-  .vtex-product-details .vtex-price-installments__container {
+  .media-not-small .vtex-product-details .vtex-price-installments__container {
     font-size: 0.875rem;
   }
 
-  .vtex-product-details .vtex-price-installments__value {
+  .media-not-small .vtex-product-details .vtex-price-installments__value {
     font-size: 1.25rem;
   }
 
-  .vtex-product-details .vtex-price-savings {
+  .media-not-small .vtex-product-details .vtex-price-savings {
     font-size: 0.875rem;
   }
-}
+/* } */
 
 .vtex-product-details > .vtex-price {
   height: 125px;

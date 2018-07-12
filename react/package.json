@@ -2,6 +2,8 @@
   "name": "product-details",
   "version": "0.1.0",
   "dependencies": {
-    "@vtex/styleguide": "^2.3.0"
+    "@vtex/styleguide": "^2.3.0",
+    "classnames": "^2.2.6",
+    "react-resize-detector": "^3.0.1"
   }
 }
