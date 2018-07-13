@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl'
 import { Query } from 'react-apollo'
 import Resize from 'react-resize-detector'
 import { mergeDeepRight, mapObjIndexed } from 'ramda'
-import classNames from 'classnames'
 
 import {
   BuyButton,
@@ -28,10 +27,11 @@ import './global.css'
 function getClassForWidth(width) {
   console.log('width', width)
 
-  return classNames({
-    'media-small': width >= 320 && width < 640,
-    'media-not-small': width >= 640,
-  })
+  if (width >= 320 && width < 640) {
+    return 'media-small'
+  }
+
+  return 'media-not-small'
 }
 
 const { account } = global.__RUNTIME__
@@ -106,10 +106,7 @@ class ProductDetails extends Component {
     return (
       <IntlInjector>
         {intl => (
-          <Query
-            query={productQuery}
-            variables={{ slug }}
-          >
+          <Query query={productQuery} variables={{ slug }}>
             {({ loading, data: { product } }) => {
               if (loading || !product) {
                 return (
@@ -141,17 +138,31 @@ class ProductDetails extends Component {
                   {width => (
                     <div className={getClassForWidth(width)}>
                       <div className="vtex-product-details flex flex-wrap pa6">
-                        <div className="vtex-product-details__images-container w-50-ns w-100-s pr5-ns">
+                        <div
+                          className={`vtex-product-details__images-container ${
+                            getClassForWidth(width) === 'media-not-small'
+                              ? 'w-50 pr5'
+                              : 'w-100'
+                          }`}
+                        >
                           <div className="fr-ns w-100 h-100">
                             <div className="flex justify-center">
                               <ProductImages
                                 images={selectedItem.images}
-                                thumbnailSliderOrientation={displayVertically ? 'VERTICAL' : 'HORIZONTAL'}
+                                thumbnailSliderOrientation={
+                                  displayVertically ? 'VERTICAL' : 'HORIZONTAL'
+                                }
                               />
                             </div>
                           </div>
                         </div>
-                        <div className="vtex-product-details__details-container w-50-ns w-100-s pl5-ns">
+                        <div
+                          className={`vtex-product-details__details-container ${
+                            getClassForWidth(width) === 'media-not-small'
+                              ? 'w-50 pl5'
+                              : 'w-100'
+                          }`}
+                        >
                           <div className="fl-ns w-100">
                             <div className="vtex-product-details__name-container pv2">
                               <ProductName
@@ -190,7 +201,10 @@ class ProductDetails extends Component {
                             {commertialOffer.AvailableQuantity > 0 ? (
                               <div>
                                 <div className="pv2">
-                                  <BuyButton seller={sellerId} skuId={selectedItem.itemId}>
+                                  <BuyButton
+                                    seller={sellerId}
+                                    skuId={selectedItem.itemId}
+                                  >
                                     <FormattedMessage id="button-label" />
                                   </BuyButton>
                                 </div>
@@ -205,7 +219,9 @@ class ProductDetails extends Component {
                               </div>
                             ) : (
                               <div className="pv4">
-                                <AvailabilitySubscriber skuId={selectedItem.itemId} />
+                                <AvailabilitySubscriber
+                                  skuId={selectedItem.itemId}
+                                />
                               </div>
                             )}
                             <div className="flex w-100 pv2">
