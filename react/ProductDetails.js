@@ -93,15 +93,15 @@ class ProductDetails extends Component {
 
     return (
       <div className="vtex-product-details flex flex-wrap pa6">
-        <div className="vtex-product-details__images-container w-50-ns w-100-s pr5-ns">
-          <div className="fr-ns w-100 h-100">
+        <div className="vtex-product-details__images-container">
+          <div className="w-100 h-100">
             <div className="flex justify-center">
               <ProductImages.Loader isVertical={displayVertically} />
             </div>
           </div>
         </div>
-        <div className="vtex-product-details__details-container w-50-ns w-100-s pl5-ns">
-          <div className="fl-ns w-100">
+        <div className="vtex-product-details__details-container">
+          <div className="w-100">
             <ProductDetails.Loader />
           </div>
         </div>
@@ -142,8 +142,8 @@ class ProductDetails extends Component {
               this.renderLoader()
             ) : (
               <div className="vtex-product-details flex flex-wrap pa6">
-                <div className="vtex-product-details__images-container w-50-ns w-100-s pr5-ns">
-                  <div className="fr-ns w-100 h-100">
+                <div className="vtex-product-details__images-container">
+                  <div className="w-100 h-100">
                     <div className="flex justify-center">
                       <ProductImages
                         images={selectedItem.images}
@@ -154,8 +154,8 @@ class ProductDetails extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="vtex-product-details__details-container w-50-ns w-100-s pl5-ns">
-                  <div className="fl-ns w-100">
+                <div className="vtex-product-details__details-container">
+                  <div className="w-100">
                     <div className="vtex-product-details__name-container pv2">
                       <ProductName
                         name={product.productName}
@@ -290,6 +290,8 @@ ProductDetails.Loader = () => {
     </div>
   )
 }
+
+ProductDetails.Loader.displayName = 'ProductDetails content loader'
 
 function mergeSchemaAndDefaultProps(schema, propName) {
   return mergeDeepRight(schema, {

@@ -8,74 +8,104 @@
 */
 
 /* Small */
-@media screen and (min-width: 20em) {
-  .vtex-product-details__name-container .vtex-product-name__brand {
-    font-size: 1.5rem;
-  }
 
-  .vtex-product-details__name-container .vtex-product-name__sku {
-    font-size: 1rem;
-  }
-
-  .vtex-product-details .vtex-price-list__container {
-    font-size: 0.75rem;
-  }
-
-  .vtex-product-details .vtex-price-selling__label {
-    font-size: 1rem;
-  }
-
-  .vtex-product-details .vtex-price-selling {
-    font-size: 2.25rem;
-  }
-
-  .vtex-product-details .vtex-price-installments__container {
-    font-size: 0.75rem;
-  }
-
-  .vtex-product-details .vtex-price-installments__value {
-    font-size: 1rem;
-  }
-
-  .vtex-product-details .vtex-price-savings {
-    font-size: 0.75rem;
-  }
+.vtex-context--s .vtex-product-details__images-container {
+  width: 100%;
 }
 
-/* Not Small */
-@media screen and (min-width: 40em) {
-  .vtex-product-details__name-container .vtex-product-name__brand {
-    font-size: 2.25rem;
-  }
-
-  .vtex-product-details__name-container .vtex-product-name__sku {
-    font-size: 1.25rem;
-  }
-
-  .vtex-product-details .vtex-price-list__container {
-    font-size: 0.875rem;
-  }
-
-  .vtex-product-details .vtex-price-selling__label {
-    font-size: 1.25rem;
-  }
-
-  .vtex-product-details .vtex-price-selling {
-    font-size: 3rem;
-  }
-
-  .vtex-product-details .vtex-price-installments__container {
-    font-size: 0.875rem;
-  }
-
-  .vtex-product-details .vtex-price-installments__value {
-    font-size: 1.25rem;
-  }
-
-  .vtex-product-details .vtex-price-savings {
-    font-size: 0.875rem;
-  }
+.vtex-context--s .vtex-product-details__details-container {
+  width: 100%;
 }
+
+/*   ------------------------------------------------------   */
+
+.vtex-context--s
+  .vtex-product-details__name-container
+  .vtex-product-name__brand {
+  font-size: 1.5rem;
+}
+
+.vtex-context--s .vtex-product-details__name-container .vtex-product-name__sku {
+  font-size: 1rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-list__container {
+  font-size: 0.75rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-selling__label {
+  font-size: 1rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-selling {
+  font-size: 2.25rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-installments__container {
+  font-size: 0.75rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-installments__value {
+  font-size: 1rem;
+}
+
+.vtex-context--s .vtex-product-details .vtex-price-savings {
+  font-size: 0.75rem;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Not Small*/
+
+.vtex-context--ns .vtex-product-details__images-container {
+  width: 50%;
+  padding-right: 4rem;
+}
+
+.vtex-context--ns .vtex-product-details__details-container {
+  width: 50%;
+  padding-left: 4rem;
+}
+
+/*   ------------------------------------------------------   */
+
+.vtex-context--ns
+  .vtex-product-details__name-container
+  .vtex-product-name__brand {
+  font-size: 2.25rem;
+}
+
+.vtex-context--ns
+  .vtex-product-details__name-container
+  .vtex-product-name__sku {
+  font-size: 1.25rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-list__container {
+  font-size: 0.875rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-selling__label {
+  font-size: 1.25rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-selling {
+  font-size: 3rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-installments__container {
+  font-size: 0.875rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-installments__value {
+  font-size: 1.25rem;
+}
+
+.vtex-context--ns .vtex-product-details .vtex-price-savings {
+  font-size: 0.875rem;
+}
+
+/*-------------------------------------------------------------*/
 
 .vtex-product-details > .vtex-price {
   height: 125px;
